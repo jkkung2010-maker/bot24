@@ -16,7 +16,7 @@ intents.voice_states = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 DB_FILE = "bb_database.json"
-PRICE_PER_PERSON = 400000 
+PRICE_PER_PERSON = 300000 
 ARMOR_COUNT = 5
 BANNER_URL = "https://img2.pic.in.th/pic/rainbow-color-1.gif"
 WHEEL_GIF = "https://i.gifer.com/Vp3R.gif"
