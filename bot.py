@@ -90,7 +90,7 @@ async def on_message(message):
             print(f"Error Banning: {e}")
 
     # ตรวจสอบข้อยกเว้นสำหรับยศ Member หรือ Admin
-    is_whitelisted = any(role.name == " ˖ ࣪membergang24 ! ᰔ ִ" for role in message.author.roles) or message.author.guild_permissions.administrator
+    is_whitelisted = any(role.id == 1482719517439426674 for role in message.author.roles) or message.author.guild_permissions.administrator
 
     if not is_whitelisted:
         msg_content = message.content.lower().replace(" ", "").replace(".", "").replace("-", "")
@@ -591,7 +591,7 @@ class AnnounceView(ui.View):
     @ui.button(label='🧪 เทสแจ้งค้างจ่าย', style=discord.ButtonStyle.danger, custom_id='btn_test_debt_ann', row=0)
     async def test_debt_btn(self, interaction: discord.Interaction, button: ui.Button): await send_test_debt_announcement(interaction)
 
-    @ui.button(label='💾 เก็บเงินเข้าคลัง', style=discord.ButtonStyle.success, custom_id='btn_deposit', row=1)
+    @ui.button(label='💾 ดึงเงินรายสัปดาห์', style=discord.ButtonStyle.success, custom_id='btn_deposit', row=1)
     async def deposit_btn(self, interaction: discord.Interaction, button: ui.Button):
         if not interaction.user.guild_permissions.administrator: return await interaction.response.send_message("❌ เฉพาะ Admin!", ephemeral=True)
         await interaction.response.send_modal(DepositModal())
